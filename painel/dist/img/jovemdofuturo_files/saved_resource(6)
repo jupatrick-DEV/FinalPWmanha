@@ -1,0 +1,67 @@
+function setCookie(cname, cvalue, exdays) {
+    let d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 300));
+    let expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+var _sf_async_config = _sf_async_config || {};
+
+_sf_async_config.uid = chartbeat_params.uid
+
+_sf_async_config.domain = chartbeat_params.domain
+
+_sf_async_config.idSync = {	
+    postid: chartbeat_params.postid,
+    date: chartbeat_params.date
+}
+
+_sf_async_config.flickerControl = false
+
+_sf_async_config.useCanonical = true
+
+var _sf_startpt = (new Date()).getTime();
+
+if ( 'undefined' !== typeof chartbeat_params.categories ) {
+    _sf_async_config.sections = chartbeat_params.categories
+}
+
+if ( 'undefined' !== typeof chartbeat_params.type ) {
+    _sf_async_config.type = chartbeat_params.type
+}
+
+if ( 'undefined' !== typeof chartbeat_params.sponsor ) {
+    _sf_async_config.sponsorName = chartbeat_params.sponsor
+}
+
+if ( 'undefined' !== typeof chartbeat_params.post_author ) {
+    _sf_async_config.authors = chartbeat_params.post_author
+}
+
+(function() {
+    function loadChartbeat() {
+        var e = document.createElement('script');
+        var n = document.getElementsByTagName('script')[0];
+        e.type = 'text/javascript';
+        e.async = true;
+        e.src = '//static.chartbeat.com/js/chartbeat.js';
+        n.parentNode.insertBefore(e, n);
+    }
+    loadChartbeat();
+})();;
+jQuery(function(){"use strict";var e=jQuery;e("#pagina-inicial").click(function(){e(".box-inicial").removeClass("active"),e(".box-funciona").addClass("active"),e(".box-depoimentos").addClass("active"),e(".box-contato").addClass("active"),e(".box-edicoes").addClass("active")}),e("#como-funciona").click(function(){e(".box-inicial").addClass("active"),e(".box-funciona").removeClass("active"),e(".box-depoimentos").addClass("active"),e(".box-contato").addClass("active"),e(".box-edicoes").addClass("active")}),e("#edicoes").click(function(){e(".box-inicial").addClass("active"),e(".box-edicoes").removeClass("active"),e(".box-funciona").addClass("active"),e(".box-depoimentos").addClass("active"),e(".box-contato").addClass("active")}),e("#depoimentos").click(function(){e(".box-inicial").addClass("active"),e(".box-depoimentos").removeClass("active"),e(".box-funciona").addClass("active"),e(".box-contato").addClass("active"),e(".box-edicoes").addClass("active")}),e("#contato").click(function(){e(".box-inicial").addClass("active"),e(".box-contato").removeClass("active"),e(".box-funciona").addClass("active"),e(".box-depoimentos").addClass("active"),e(".box-edicoes").addClass("active")})}),jQuery(".container-image-video-curso").on("click",function(){var e,a,i,o=$(this).attr("data-video-type").toLowerCase(),t=$(this).attr("data-video-id"),c=($(this).attr("data-brand-videos"),$(this));if(a=760*(i=317*(a=c.width())/760)/317,i=Math.floor(i),a=Math.floor(a),c.addClass("playing").css("min-height",i+"px"),"youtube"===o){var s="https://www.youtube.com/embed/"+encodeURIComponent(t)+"?rel=0&amp;showinfo=0&autoplay=true";e=$("<iframe />",{width:a,height:i,src:s,frameborder:"0",allowfullscreen:"true"})}else if("dailymotion"===o){s="//www.dailymotion.com/embed/video/"+encodeURIComponent(t)+"?autoPlay=1";e=$("<iframe />",{width:a,height:i,src:s,frameborder:"0",allowfullscreen:"true"})}else if("vimeo"===o){s="https://player.vimeo.com/video/"+encodeURIComponent(t)+"?autoplay=1&title=0&byline=0&portrait=0";e=$("<iframe />",{width:a,height:i,src:s,frameborder:"0",allowfullscreen:"true",id:"cursoenem-vimeo"})}c.children().remove(),c.append(e)}),jQuery("#menu-mobile").change(function(){this.value&&(window.location.href=this.value)}),jQuery(document).ready(function(e){jQuery(".popup-youtube").magnificPopup({type:"iframe",mainClass:"mfp-fade",removalDelay:160,preloader:!1,fixedContentPos:!0}),jQuery(".simulador-financeiro .guia a").click(function(e){e.preventDefault(),jQuery(".simulador-financeiro .guia a").removeClass("selecionado"),jQuery(".simulador-financeiro .caixa").hide(),jQuery(this).addClass("selecionado"),jQuery(".simulador-financeiro .caixa").eq(jQuery(this).index()).fadeIn()})});;

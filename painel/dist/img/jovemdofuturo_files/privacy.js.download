@@ -1,0 +1,11 @@
+jQuery(function () {
+  var storageName = "privacyCheck";
+  if (!localStorage.getItem(storageName)) {
+    jQuery("#privacy-warning").attr("style", "display: flex;");
+  }
+  jQuery(document).on("click", "#privacy-close", function () {
+    localStorage.setItem(storageName, true);
+    jQuery("#privacy-warning").hide();
+    jQuery("body.home").removeClass("privacy-header");
+  });
+});
