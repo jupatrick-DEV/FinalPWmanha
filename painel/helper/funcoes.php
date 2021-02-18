@@ -1,8 +1,29 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+function verificarLogin() {
+    //No futuro as informações são 
+    //trazidos do banco de dados
 
+    $usuario = 'pw_manha';
+    $senha = 'pw_manha';
+    
+    //Verificar se as informações passados 
+    //pelo usuário é igual a que estão no banco.
+
+    if ($_POST) {
+        if ($_POST['usuario'] == $usuario &&
+                $_POST['senha'] == $senha) {
+            //Cria dados na SESSION
+            $_SESSION['usuario'] = $usuario;
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } else {
+        if (isset($_SESSION['usuario'])) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+}
