@@ -9,24 +9,20 @@ $pg = isset($_GET['pg']);
 
 if ($pg) {
 
-
     switch ($_GET['pg']) {
 
         case 'inicial':
+            echo 'pahins inivsnsl';
             //Página inicial do Painel Adm           
-            if (verificarLogin()) {
-                
-                
-                include_once './site/paginas/inicial.php';
-                
-            } else {
-                echo 'página não encontrada';
-            }
+//            if (verificarLogin()) {
+//                
+//                
+//                include_once './site/paginas/inicial.php';
+//                
+//            } else {
+//                echo 'página não encontrada';
+//            }
             break;
-
-
-
-
 
         case 'contato':
 
@@ -63,18 +59,18 @@ if ($pg) {
 
             break;
 
-
-
         default:
 
-
-            include_once './site/paginas/inicial.php';
+            include_once 'site/paginas/inicial.php';
+            echo 'default';
+            
 
             break;
     }
 } else {
 //não existe   
-    include_once './site/paginas/inicial.php';
+    include_once 'site/paginas/inicial.php';
+    echo 'sçldkjfgçlks';
 }
 
 
