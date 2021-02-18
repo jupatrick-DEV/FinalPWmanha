@@ -34,8 +34,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
-
             <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -44,21 +42,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Artigos</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown">                            
+                        <buttom class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Compos de produções
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Pesquisa</a>
-                            <a class="dropdown-item" href="#">Outra ação</a>
+                        </buttom>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li> <a class="dropdown-item" href="#">Pesquisa</a></li>
+                            <li><a class="dropdown-item" href="#">Outra ação</a></li>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Algo mais aqui</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pesquisas</a>
-                    </li>
+                            <li><a class="dropdown-item" href="#">Algo mais aqui</a></li>
+                        </ul>
+                    </div>
+
                 </ul>
+
+
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Pesquisar</button>
@@ -235,7 +233,7 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
@@ -246,6 +244,12 @@
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
         </aside>
-        <!-- /.control-sidebar -->
+        <script src="painel/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="painel/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="painel/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="painel/dist/js/demo.js"></script><!-- /.control-sidebar -->
     </body>
 </html>

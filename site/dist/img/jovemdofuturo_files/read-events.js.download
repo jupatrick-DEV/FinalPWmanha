@@ -1,0 +1,111 @@
+const total = jQuery(".article-content > p").length;
+const quarter = Math.floor((total * 25) / 100);
+const half = Math.floor((total * 50) / 100);
+const threeQuarters = Math.floor((total * 75) / 100);
+
+const articleRead0 = jQuery(".article-content > p")[0];
+const articleRead25 = jQuery(".article-content > p")[quarter];
+const articleRead50 = jQuery(".article-content > p")[half];
+const articleRead75 = jQuery(".article-content > p")[threeQuarters];
+const articleRead100 = jQuery(".article-content > p")[total - 1];
+
+const articleTitle = jQuery(".article-title").html();
+const articleCategory = jQuery(".article-category a").html();
+const articleAuthor =
+  jQuery(".article-author-name > span > strong").html() ||
+  jQuery(".article-author-name > span").html() ||
+  jQuery(".author-element >").html();
+const publishDate = jQuery(".publish-time").html().replace(/\s/g, "");
+const modifiedDate = jQuery(".modified-time").html().replace(/\s/g, "");
+const articleTags = {};
+
+for (let i = 1; i <= jQuery(".article-tags a").length; i++) {
+  articleTags[`tag${i}`] = jQuery(`.article-tags a:nth-of-type(${i})`).html();
+}
+
+let appeared = 0;
+document.addEventListener("scroll", function () {
+  if (checkVisible(articleRead0) && appeared < 1) {
+    appeared += 1;
+    analytics.track("article_read_0", {
+      article_title: articleTitle,
+      section: articleCategory,
+      authors: articleAuthor,
+      publish_date: publishDate,
+      last_modified_date: modifiedDate,
+      keywords: articleTags,
+    });
+  }
+  if (checkVisible(articleRead25) && appeared < 2) {
+    appeared += 1;
+    analytics.track("article_read_25", {
+      article_title: articleTitle,
+      section: articleCategory,
+      authors: articleAuthor,
+      publish_date: publishDate,
+      last_modified_date: modifiedDate,
+      keywords: articleTags,
+    });
+  }
+  if (checkVisible(articleRead50) && appeared < 3) {
+    appeared += 1;
+    analytics.track("article_read_50", {
+      article_title: articleTitle,
+      section: articleCategory,
+      authors: articleAuthor,
+      publish_date: publishDate,
+      last_modified_date: modifiedDate,
+      keywords: articleTags,
+    });
+  }
+  if (checkVisible(articleRead75) && appeared < 4) {
+    appeared += 1;
+    analytics.track("article_read_75", {
+      article_title: articleTitle,
+      section: articleCategory,
+      authors: articleAuthor,
+      publish_date: publishDate,
+      last_modified_date: modifiedDate,
+      keywords: articleTags,
+    });
+  }
+  if (checkVisible(articleRead100) && appeared < 5) {
+    appeared += 1;
+    analytics.track("article_read_100", {
+      article_title: articleTitle,
+      section: articleCategory,
+      authors: articleAuthor,
+      publish_date: publishDate,
+      last_modified_date: modifiedDate,
+      keywords: articleTags,
+    });
+  }
+});
+
+function checkVisible(elm) {
+  if (elm) {
+    var rect = elm.getBoundingClientRect();
+
+    var viewHeight = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight
+    );
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  }
+  return false;
+}
+
+//DEEPBI EVENTS
+setTimeout(function(){ 
+  deep.event({
+    'event.type': 'content-context',
+    'content.id': `${customData.post_id}`,
+    'title': `${customData.titulo_materia}`,
+    'publication.date': `${customData.data_publicacao}`,
+    'author.name': `${customData.autor}`,
+    'topic': `${customData.editoria}`,
+    'article.type': `${customData.article_type}`,
+    'tags': `${customData.tag}`,
+    'publisher-editor': `${customData.editor}`
+  });
+}, 8000);
