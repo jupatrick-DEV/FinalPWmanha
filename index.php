@@ -81,7 +81,7 @@ if ($pg) {
 } else {
 //não existe   
     include_once 'site/paginas/inicial.php';
-    echo 'sçldkjfgçlks';
+
 }
 
 
