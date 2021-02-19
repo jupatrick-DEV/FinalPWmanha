@@ -41,9 +41,12 @@ if ($pg) {
         case 'paginacards':
 
 
-            include_once './painel/paginacards.php';
-
+            include_once './painel/paginas/includes/header.php';
+            include_once './site/paginas/paginacards.php';
+            include_once './painel/paginas/includes/footer.php';
             break;
+           
+           
 
         case 'paginas':
 

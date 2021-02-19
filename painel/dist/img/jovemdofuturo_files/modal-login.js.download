@@ -1,0 +1,36 @@
+jQuery(function () {
+	jQuery(document).on('click', '.modal-open', function () {
+		jQuery('#modal-login').show();
+	});
+	jQuery(document).on('click', '#forgot-action', function () {
+		jQuery('#login-form').hide();
+		jQuery('#recovery-form').hide();
+		jQuery('#close-login-icon').hide();
+		jQuery('#forgot-form').show();
+		jQuery('#step-back-login-icon').show();
+	});
+	jQuery(document).on('click', '#step-back-login-icon', function () {
+		jQuery('#login-form').show();
+		jQuery('#close-login-icon').show();
+		jQuery('#recovery-form').hide();
+		jQuery('#forgot-form').hide();
+		jQuery('#step-back-login-icon').hide();
+	});
+	jQuery(document).on('click', '#close-login-icon', function () {
+		jQuery('#modal-login').hide();
+	});
+});
+
+jQuery(document).mouseup(function (closemodal) {
+	var container = $('#modal-box');
+
+	if (!container.is(closemodal.target) && container.has(closemodal.target).length === 0) {
+		jQuery('#modal-login').hide();
+	}
+});
+
+function passwordVisibility() {
+	var passField = document.getElementById("login-password");
+	if(passField.type === "password"){passField.type = "text";document.getElementById("password-visibility-id").innerHTML = "visibility_off";} 
+	else{passField.type = "password";document.getElementById("password-visibility-id").innerHTML = "visibility";}
+}

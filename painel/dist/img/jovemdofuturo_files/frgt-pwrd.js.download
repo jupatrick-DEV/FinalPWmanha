@@ -1,0 +1,41 @@
+const forgotUrl = 'https://z15ihlbtx2.execute-api.us-east-1.amazonaws.com/prd/v1/auth/forgotPassword';
+
+const forgotForm = document.getElementById('forgot-form');
+const recoveryForm = document.getElementById('recovery-form');
+
+forgotForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    $("#forgot-submit").attr('value', 'Aguarde...');
+    var recoveryEmail = document.getElementById('recovery-email').value;
+
+    const recoveryUser = {
+        username: recoveryEmail,
+    };
+
+    const recoveryReq = new Request(forgotUrl, {
+        method: 'POST',
+        body: JSON.stringify(recoveryUser),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    });
+
+    fetch(recoveryReq)
+        .then(resRecovery => resRecovery.json())
+        .then(function(resRecovery) {
+            if(resRecovery.statusCode === 401 || resRecovery.statusCode === 400){
+                $("#forgot-submit").attr('value', 'Enviar link de recuperação');
+                $(".login-msgs").css("background-color","#e11b22");
+                $(".login-msgs").fadeIn("fast");
+                $(".login-msgs").text("Não encontramos o email cadastrado.");
+                $(".login-msgs").delay(5000).fadeOut();
+                console.log("RECOVERY RESPONSE STATUS:", resRecovery);
+            }
+            else{
+                console.log("RECOVERY OK RESPONSE:", resRecovery);	
+                $("#forgot-form").fadeOut("fast");
+                $('#step-back-login-icon').hide();
+                $("#recovery-form").fadeIn("fast");
+            }
+        })
+});

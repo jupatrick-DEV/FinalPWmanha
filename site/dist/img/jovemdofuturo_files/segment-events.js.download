@@ -1,0 +1,453 @@
+//COMPONENTS
+
+//GENERAL
+var subDomain = 'news';
+var Version = '2.0';
+var formatHeader = 'HEADER_BUTTON';
+var formatMenu = 'MENU_BUTTON';
+var formatFooter = 'FOOTER_BUTTON';
+var formatTopArticle = 'TOP_OF_ARTICLE';
+var formatBottomArticle = 'BOTTOM_OF_ARTICLE';
+
+//ASSINE EVENTS
+document.getElementById('assine-ja').onclick = function () {
+  analytics.track('news_subscribe_cta_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatHeader
+  });
+};
+
+document.getElementById('assine-side').onclick = function () {
+  analytics.track('news_subscribe_cta_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatMenu
+  });
+};
+
+document.getElementById('assine-footer').onclick = function () {
+  analytics.track('news_subscribe_cta_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatFooter
+  });
+};
+
+//LOGIN EVENTS
+document.getElementById('loginButton').onclick = function () {
+  analytics.track('user_login_intention_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatHeader
+  });
+};
+
+if (document.getElementById('login-side')) {
+  document.getElementById('login-side').onclick = function () {
+    analytics.track('user_login_intention_clicked', {
+      subdomain: subDomain,
+      version: Version,
+      format: formatMenu
+    });
+  };
+}
+
+document.getElementById('my-subscribe-header').onclick = function () {
+  analytics.track('user_my_subscribe_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatHeader
+  });
+};
+
+if (document.getElementById('my-subscribe-side')) {
+  document.getElementById('my-subscribe-side').onclick = function () {
+    analytics.track('user_my_subscribe_clicked', {
+      subdomain: subDomain,
+      version: Version,
+      format: formatMenu
+    });
+  };
+}
+
+document.getElementById('logout-header').onclick = function () {
+  analytics.track('user_logout_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatHeader
+  });
+};
+
+document.getElementById('logout-icon').onclick = function () {
+  analytics.track('user_logout_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatMenu
+  });
+};
+
+document.getElementById('forgot-action').onclick = function () {
+  analytics.track('user_forgot_password_clicked', {
+    subdomain: subDomain,
+    version: Version
+  });
+};
+
+//SECTIONS EVENTS
+document.getElementById('logo-exame').onclick = function () {
+  analytics.track('section_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    section_name: 'HEADER LOGO'
+  });
+};
+
+document.getElementById('logo-footer').onclick = function () {
+  analytics.track('section_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    section_name: 'FOOTER LOGO'
+  });
+};
+
+document.getElementById('sac-footer').onclick = function () {
+  analytics.track('section_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    section_name: 'SAC FOOTER'
+  });
+};
+
+document.getElementById('sac-header').onclick = function () {
+  analytics.track('section_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    section_name: 'SAC HEADER'
+  });
+};
+
+document.getElementById('ultimas-noticias').onclick = function () {
+  analytics.track('section_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    section_name: 'Últimas notícias'
+  });
+};
+
+//SEARCH EVENT
+document.getElementById('search-exame-input').addEventListener('keyup', function (event) {
+  if (event.keyCode === 13) {
+    analytics.track('search_form_inputed', {
+      subdomain: subDomain,
+      version: Version,
+      search_text: document.getElementById('search-exame-input').value
+    });
+  }
+});
+
+//DYNAMIC COMPONENTS EVENT
+document.addEventListener('click', function (e) {
+  e = e || window.event;
+  var target = e.target || e.srcElement;
+  if (e.srcElement.className === 'footer-category') {
+    var text = target.textContent || target.innerText;
+    analytics.track('section_button_clicked', {
+      subdomain: subDomain,
+      version: Version,
+      section_name: text
+    });
+  }
+  if (e.srcElement.className === 'menu-image-title') {
+    var text = target.textContent || target.innerText;
+    analytics.track('section_button_clicked', {
+      subdomain: subDomain,
+      version: Version,
+      section_name: text
+    });
+  }
+}, false);
+
+//NEWSLETTER EVENT
+document.getElementById('mce-EMAIL').addEventListener('blur', function () {
+  analytics.identify('', {
+    email_newsletter_news: document.getElementById('nome').value,
+    username_newsletter_news: document.getElementById('mce-EMAIL').value
+  });
+}, false);
+
+//SOCIAL EVENTS
+document.getElementById('linkedin-header').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'LINKEDIN',
+    format: formatHeader
+  });
+};
+
+document.getElementById('instagram-header').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'INSTAGRAM',
+    format: formatHeader
+  });
+};
+
+document.getElementById('youtube-header').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'YOUTUBE',
+    format: formatHeader
+  });
+};
+
+document.getElementById('twitter-header').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'TWITTER',
+    format: formatHeader
+  });
+};
+
+document.getElementById('facebook-header').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'FACEBOOK',
+    format: formatHeader
+  });
+};
+
+document.getElementById('linkedin-footer').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'LINKEDIN',
+    format: formatFooter
+  });
+};
+
+document.getElementById('instagram-footer').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'INSTAGRAM',
+    format: formatFooter
+  });
+};
+
+document.getElementById('youtube-footer').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'YOUTUBE',
+    format: formatFooter
+  });
+};
+
+document.getElementById('twitter-footer').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'TWITTER',
+    format: formatFooter
+  });
+};
+
+document.getElementById('facebook-footer').onclick = function () {
+  analytics.track('news_social_network_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'FACEBOOK',
+    format: formatFooter
+  });
+};
+
+//ACADEMY EVENTS
+document.getElementById('academy-header').onclick = function () {
+  analytics.track('academy_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatHeader
+  });
+};
+
+document.getElementById('academy-side').onclick = function () {
+  analytics.track('academy_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatMenu
+  });
+};
+
+document.getElementById('academy-footer').onclick = function () {
+  analytics.track('academy_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatFooter
+  });
+};
+
+//RESEARCH EVENTS
+document.getElementById('research-header').onclick = function () {
+  analytics.track('research_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatHeader
+  });
+};
+
+document.getElementById('research-side').onclick = function () {
+  analytics.track('research_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatMenu
+  });
+};
+
+document.getElementById('research-footer').onclick = function () {
+  analytics.track('research_button_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    format: formatFooter
+  });
+};
+
+//PAYWALL EVENTS
+document.getElementById('pywll-login').onclick = function () {
+  analytics.track('login_intention_paywall', {
+    subdomain: subDomain,
+    version: Version
+  });
+};
+
+//SHARE EVENTS
+document.getElementById('whatsapp-share-top').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'WHATSAPP',
+    format: formatTopArticle
+  });
+};
+
+document.getElementById('linkedin-share-top').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'LINKEDIN',
+    format: formatTopArticle
+  });
+};
+
+document.getElementById('telegram-share-top').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'TELEGRAM',
+    format: formatTopArticle
+  });
+};
+
+document.getElementById('twitter-share-top').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'TWITTER',
+    format: formatTopArticle
+  });
+};
+
+document.getElementById('facebook-share-top').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'FACEBOOK',
+    format: formatTopArticle
+  });
+};
+
+document.getElementById('email-share-top').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'EMAIL',
+    format: formatTopArticle
+  });
+};
+
+document.getElementById('copy-share-top').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'COPY_LINK',
+    format: formatTopArticle
+  });
+};
+
+document.getElementById('whatsapp-share-bottom').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'WHATSAPP',
+    format: formatBottomArticle
+  });
+};
+
+document.getElementById('linkedin-share-bottom').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'LINKEDIN',
+    format: formatBottomArticle
+  });
+};
+
+document.getElementById('telegram-share-bottom').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'TELEGRAM',
+    format: formatBottomArticle
+  });
+};
+
+document.getElementById('twitter-share-bottom').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'TWITTER',
+    format: formatBottomArticle
+  });
+};
+
+document.getElementById('facebook-share-bottom').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'FACEBOOK',
+    format: formatBottomArticle
+  });
+};
+
+document.getElementById('email-share-bottom').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'EMAIL',
+    format: formatBottomArticle
+  });
+};
+
+document.getElementById('copy-share-bottom').onclick = function () {
+  analytics.track('news_social_network_share_clicked', {
+    subdomain: subDomain,
+    version: Version,
+    social_network: 'COPY_LINK',
+    format: formatBottomArticle
+  });
+};
