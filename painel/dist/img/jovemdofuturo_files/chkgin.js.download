@@ -1,0 +1,168 @@
+document.addEventListener("DOMContentLoaded", function () {
+    function setCookie(cname, cvalue, exdays) {
+        let d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 300));
+        let expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";domain=.exame.com;path=/";
+    }
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    var user = getCookie("xm_dt");
+    var optinMonsterLotame = localStorage.getItem('lotame_11366_auds');
+    var _cbq = window._cbq = (window._cbq || []);
+    analytics.ready(function() {
+        var anonymousIdSegment = analytics.user().anonymousId();
+        setCookie("anonymousIdSegment", `${anonymousIdSegment}`, 30);
+    });
+    setCookie("optnMnstrAudLotame", `${optinMonsterLotame}`, 30);
+    if (user) {
+        document.querySelector("#logout-icon").setAttribute("style", "display: block;");
+        document.getElementById("displayusr").innerHTML += "<a href='https://assinatura.exame.com/usuario/' id='my-subscribe-side'>Olá, seja bem vindo!</a>";
+        document.getElementById("loginButton").setAttribute("href", "javascript:;");
+        $("#loginButton").click(function () {
+            $(".menu-usr").toggle();
+        });
+        console.log("gintre");
+
+        var pywllchk = getCookie("pywlluser");
+        if (pywllchk > 0) {
+            analytics.identify('', {
+                news_user_type: 'PAID'
+            });
+            _cbq.push(['_acct', 'paid']);
+            if(!localStorage.getItem("revistaWarning")) {
+                $("#ad-blocker-warning").show();
+            }
+        }
+        else if (pywllchk < 1) {
+            const accessesUrl = 'https://assinatura.exame.com/api/store/v1/me/accesses';
+            const accesses = new Request(accessesUrl, {
+                method: 'GET',
+                headers: new Headers({
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization' : `Bearer ${user}`
+                })
+            });
+            fetch(accesses)
+                .then(resAccesses => resAccesses.json())
+                .then(function(resAccesses) {
+                    console.log("RES ACCESSES:", resAccesses);
+                    if(Array.isArray(resAccesses.data) && resAccesses.data.length){
+                        setCookie("pywllgst", '-', '-');
+                        setCookie("pywlluser", 1, 30);
+                        analytics.identify('', {
+                            news_user_type: 'PAID'
+                        });
+                        _cbq.push(['_acct', 'paid']);
+                    }
+                    else{
+                        analytics.identify('', {
+                            news_user_type: 'LGDIN'
+                        });
+                        _cbq.push(['_acct', 'lgdin']);
+                    }
+                })
+        }
+        else{
+            analytics.identify('', {
+                news_user_type: 'LGDIN'
+            });
+            _cbq.push(['_acct', 'lgdin']);
+        }
+
+        let act = new Date();
+        act.setTime(act.getTime()-(3930*2750));
+        let actual = act.toGMTString();
+
+        if(localStorage.getItem("expr") !== null && actual > localStorage.getItem("expr")){
+            const rftUrl = 'https://z15ihlbtx2.execute-api.us-east-1.amazonaws.com/prd/v1/auth/refresh';
+            var xmrft = getCookie("xm_rft");
+            const rftBody = {
+                refreshToken: xmrft
+            };
+        
+            const rftReq = new Request(rftUrl, {
+                method: 'POST',
+                body: JSON.stringify(rftBody),
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            });
+
+            fetch(rftReq)
+            .then(rftres => rftres.json())
+            .then(function(rftres) {
+                if(rftres.statusCode === 400 || rftres.statusCode === 401 || rftres.statusCode === 404 || rftres.statusCode === 422) {
+                    console.log("rftres-error-rsp:", rftres);
+                    localStorage.removeItem('expr');
+                }
+                else{	
+                    console.log("rftres-ok-rsp:", rftres);
+                    let exp = new Date();
+                    exp.setTime(exp.getTime()-(3930*1900));
+                    let expires = exp.toGMTString();
+                    setCookie('xm_dt', rftres.AuthenticationResult.IdToken, 30);
+                    setCookie('xm_rft', xmrft, 30);
+                    setCookie('xm_cst', rftres.AuthenticationResult.AccessToken, 30);
+                    localStorage.setItem("expr", expires);
+                    const accessesUrl = 'https://assinatura.exame.com/api/store/v1/me/accesses';
+                    const accesses = new Request(accessesUrl, {
+                        method: 'GET',
+                        headers: new Headers({
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'Authorization' : `Bearer ${rftres.AuthenticationResult.IdToken}`
+                        })
+                    });
+                    fetch(accesses)
+                    .then(resAccesses => resAccesses.json())
+                    .then(function(resAccesses) {
+                        console.log("RES ACCESSES RFTRES:", resAccesses);
+                        if(Array.isArray(resAccesses.data) && resAccesses.data.length){
+                            setCookie("pywllgst", '-', '-');
+                            setCookie("pywlluser", 1, 30);
+                            analytics.identify('', {
+                                news_user_type: 'PAID'
+                            });
+                            _cbq.push(['_acct', 'paid']);
+                        }
+                        else{
+                            setCookie("pywlluser", "-", "-");
+                            setCookie("pywllgst", 1, 100);
+                            analytics.identify('', {
+                                news_user_type: 'ANON'
+                            });
+                            _cbq.push(['_acct', 'anon']);
+                        }
+                    })
+                }	
+            })
+        }
+        document.getElementById("pixel-logged").innerHTML += "<script type='text/javascript'>var axel = Math.random() + '';var a = axel * 10000000000000;document.write('<img src='https://pubads.g.doubleclick.net/activity;dc_iu=/22033231199/DFPAudiencePixel;ord=' + a + ';dc_seg=6478390874?' width=1 height=1 border=0/>');</script><noscript><img src='https://pubads.g.doubleclick.net/activity;dc_iu=/22033231199/DFPAudiencePixel;ord=1;dc_seg=6478390874?' width=1 height=1 border=0/></noscript>";
+    }
+    else {
+        document.querySelector("#logout-icon").setAttribute("style", "display: none;");
+        document.getElementById("displayusr").innerHTML += "<a id='login-side' class='modal-open'>Acesse sua conta</a>";
+        document.getElementById("loginButton").setAttribute("class", "modal-open");
+        document.getElementById("loginButton").setAttribute("onclick", "");
+        console.log("gust");
+        analytics.identify('', {
+            news_user_type: 'ANON'
+        });
+        _cbq.push(['_acct', 'anon']);
+    }
+});

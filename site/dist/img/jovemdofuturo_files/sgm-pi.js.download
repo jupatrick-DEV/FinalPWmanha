@@ -1,0 +1,78 @@
+document.addEventListener("DOMContentLoaded", function () {
+  function setCookie(cname, cvalue, exdays) {
+      let d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 300));
+      let expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";domain=.exame.com;path=/";
+  }
+  function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
+
+  //AUDIENCES FETCHING
+  var anonIdParam = getCookie("anonymousIdSegment");
+  var mlParam = getCookie("segAudMl");
+  
+  if (!anonIdParam) {
+      analytics.ready(function() {
+          var anonymousIdSegment = analytics.user().anonymousId();
+          setCookie("anonymousIdSegment", `${anonymousIdSegment}`, 100);
+      });
+  }
+  else if (mlParam) {
+      const segmURL = `https://exame.com/sgm/?ml=${atob(mlParam)}`;
+      const segmReq = new Request(segmURL, {
+          method: 'GET',
+          headers: new Headers({
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          })
+      });
+      fetch(segmReq)
+      .then(resSegmReq => resSegmReq.json())
+      .then(function(resSegmReq) {
+          trueKeys = Object.keys(resSegmReq).filter(k => resSegmReq[k] === true);
+          falseKeys = Object.keys(resSegmReq).filter(k => resSegmReq[k] === false);
+          var trueKeysToString = trueKeys.toString();
+          var falseKeysToString = falseKeys.toString();
+          setCookie("segAudPos", trueKeysToString, 1);
+          setCookie("segAudNeg", falseKeysToString, 1);
+          setCookie("segAudMl", btoa(resSegmReq.email), 1);
+      })
+      .catch(function(err) { console.error(err); });
+  }
+  else if (anonIdParam && !mlParam) {
+      const segmURL = `https://exame.com/sgm/?anonid=${anonIdParam}`;
+      const segmReq = new Request(segmURL, {
+          method: 'GET',
+          headers: new Headers({
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          })
+      });
+      fetch(segmReq)
+      .then(resSegmReq => resSegmReq.json())
+      .then(function(resSegmReq) {
+          trueKeys = Object.keys(resSegmReq).filter(k => resSegmReq[k] === true);
+          falseKeys = Object.keys(resSegmReq).filter(k => resSegmReq[k] === false);
+          var trueKeysToString = trueKeys.toString();
+          var falseKeysToString = falseKeys.toString();
+          setCookie("segAudPos", trueKeysToString, 1);
+          setCookie("segAudNeg", falseKeysToString, 1);
+          setCookie("segAudMl", btoa(resSegmReq.email), 1);
+      })
+      .catch(function(err) { console.error(err); });
+  }
+});

@@ -1,0 +1,4 @@
+var letterTotal = jQuery( '.article-content p' ).text().split(' ').length;
+var readTime = Math.ceil( letterTotal / 200 );
+
+jQuery( '#read-time' ).text( readTime + ' min' );

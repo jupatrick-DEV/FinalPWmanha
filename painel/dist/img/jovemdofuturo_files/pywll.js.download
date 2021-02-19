@@ -1,0 +1,71 @@
+function setCookie(cname, cvalue, exdays) {
+    let d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 300));
+    let expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";domain=.exame.com;path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("pywlltrm");
+    let trigger = document.getElementById('pywll-inf').innerHTML.trim();
+    let guest = getCookie("pywllgst");
+    let user = getCookie("pywlluser");
+
+    if (user > 0) {
+        setCookie("pywllgst", "-", "-");
+    }
+    else{
+        if (trigger === 'closed') {
+            $(".article-content p").eq(2).nextAll().remove();
+            $("#paywallModal").fadeIn("slow");
+            analytics.track('news_paywall_shown', {
+                subdomain: "news",
+                version: "1.0",
+                articles_read_count: "0"
+            });
+            setTimeout(function(){ 
+                deep.event({
+                    'event.type': 'paywall-hit' 
+                });
+            }, 5000);
+        }
+        if (trigger === 'accounted') {
+            if (guest >= 4) {
+                $(".article-content p").eq(2).nextAll().remove();
+                $("#paywallModal").fadeIn("slow");
+                analytics.track('news_paywall_shown', {
+                    subdomain: "news",
+                    version: "1.0",
+                    articles_read_count: "3"
+                });
+                setTimeout(function(){ 
+                    deep.event({
+                        'event.type': 'paywall-hit' 
+                    });
+                }, 5000);
+            }
+            else if (guest <= 3) {
+                setCookie("pywllgst", parseInt(guest) + 1, 100);
+            }
+            else {
+                setCookie("pywllgst", 1, 100);
+            }
+        }
+    }
+});
