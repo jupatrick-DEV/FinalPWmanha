@@ -20,6 +20,8 @@
             <small>Data de postagem:</small> <br />
             <small>E-mail para contato</small>
         </div>
+    </head>
+    <body>
 
         <div class="row">
             <div class="card text-center">
