@@ -40,7 +40,6 @@ if ($pg) {
 
         case 'paginacards':
 
-
             include_once './painel/paginas/includes/header.php';
             include_once './site/paginas/paginacards.php';
             include_once './painel/paginas/includes/footer.php';
@@ -80,8 +79,10 @@ if ($pg) {
     }
 } else {
 //não existe   
-    include_once 'site/paginas/inicial.php';
-    echo 'nova ateracao';
+    include_once 'site/paginas/includes/header.php';
+    include_once 'site/paginas/includes/menus.php'; 
+    include_once 'site/paginas/inicial.php'; 
+    include_once 'site/paginas/includes/footer.php';  
 
 }
 
