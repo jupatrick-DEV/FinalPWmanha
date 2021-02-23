@@ -23,15 +23,14 @@ if ($pg) {
             
             break;
         
-        case 'pagina-artigo':
+        case 'pagina-artigos':
             include_once 'site/paginas/includes/header.php';
             include_once 'site/paginas/includes/menus.php';
-            include_once 'site/paginas/';
+            include_once 'site/paginas/pagina-artigos.php';
             include_once 'site/paginas/includes/footer.php';
             
             break;
         
-
             
 //        Responsável Juliana
         case 'contato':
@@ -56,6 +55,17 @@ if ($pg) {
             include_once 'site/paginas/includes/menus.php';
             include_once 'site/paginas/faca-voce-mesmo.php';
             include_once 'site/paginas/includes/footer.php';
+
+            break;
+        
+//        Responsavel Hermes
+        case 'pesquisar':
+         
+            
+            
+            
+            
+            
 
             break;
 
@@ -102,7 +112,7 @@ if ($pg) {
 //não existe   
     include_once 'site/paginas/includes/header.php';
     include_once 'site/paginas/includes/menus.php'; 
-    include_once 'site/paginas/inicial.php'; 
+    include_once 'site/paginas/includes/erro.php'; 
     include_once 'site/paginas/includes/footer.php';  
 
 
