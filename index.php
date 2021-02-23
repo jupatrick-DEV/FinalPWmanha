@@ -16,16 +16,16 @@ if ($pg) {
 
 //        Responsável Laura - paginacards
         case 'inicial':
-            include_once 'painel/paginas/includes/header.php';
-            include_once 'painel/paginas/includes/menus.php';
+            include_once 'site/paginas/includes/header.php';
+            include_once 'site/paginas/includes/menus.php';
             include_once 'site/paginas/pagina-cards.php';
-            include_once 'painel/paginas/includes/footer.php';
+            include_once 'site/paginas/includes/footer.php';
             
             break;
         
         case 'pagina-artigo':
-            include_once 'sitepaginas/includes/header.php';
-            include_once 'sitepaginas/includes/menus.php';
+            include_once 'site/paginas/includes/header.php';
+            include_once 'site/paginas/includes/menus.php';
             include_once 'site/paginas/';
             include_once 'site/paginas/includes/footer.php';
             
