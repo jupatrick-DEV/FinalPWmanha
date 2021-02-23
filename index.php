@@ -23,15 +23,14 @@ if ($pg) {
             
             break;
         
-        case 'pagina-artigo':
+        case 'pagina-artigos':
             include_once 'site/paginas/includes/header.php';
             include_once 'site/paginas/includes/menus.php';
-            include_once 'site/paginas/';
+            include_once 'site/paginas/pagina-artigos.php';
             include_once 'site/paginas/includes/footer.php';
             
             break;
         
-
             
 //        Responsável Juliana
         case 'contato':
