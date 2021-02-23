@@ -58,6 +58,17 @@ if ($pg) {
             include_once 'site/paginas/includes/footer.php';
 
             break;
+        
+//        Responsavel Hermes
+        case 'pesquisar':
+         
+            
+            
+            
+            
+            
+
+            break;
 
 
         
