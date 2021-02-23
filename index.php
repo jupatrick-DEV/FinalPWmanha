@@ -65,9 +65,27 @@ if ($pg) {
         
 
         case 'login':
+            include_once 'painel/paginas/includes/header.php';
+            include_once 'painel/paginas/includes/menus.php';
+            include_once 'painel/paginas/acesso/login.php';
+            include_once 'painel/paginas/includes/footer.php';
 
+            break;
+        
+        
+        case 'validar-artigo':
+            include_once 'painel/paginas/includes/header.php';
+            include_once 'painel/paginas/includes/menus.php';
+            include_once 'painel/paginas/pagina-validar-artigo.php';
+            include_once 'painel/paginas/includes/footer.php';
 
-            include_once './painel/paginas/acesso/login.php';
+            break;
+        
+        case 'dashboard':
+            include_once 'painel/paginas/includes/header.php';
+            include_once 'painel/paginas/includes/menus.php';
+            include_once 'painel/paginas/dashboard.php';
+            include_once 'painel/paginas/includes/footer.php';
 
             break;
 
