@@ -32,19 +32,19 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="site/paginas/artigos.php">Artigos <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="?pg=pagina-artigos">Artigos </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="site/paginas/sobre.php">Sobre <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="site/paginas/sobre.php">Sobre </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="site/paginas/contato.php">Contato <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="site/paginas/contato.php">Contato </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="http://www.pe.senac.br/">SenacPE <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="http://www.pe.senac.br/">SenacPE </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="http://www.pe.senac.br/cursos-2/">Próximas Turmas <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="http://www.pe.senac.br/cursos-2/">Próximas Turmas </a>
                 </li>
                 <div class="text-right">
                     <a href="site/paginas/facavoce.php"><button class="btn btn-sm btn-outline-primary" type="button">Area Administrativa </button></a> 
