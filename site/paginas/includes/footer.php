@@ -116,5 +116,13 @@
 <!-- AdminLTE for demo purposes -->
 <script src="painel/dist/js/demo.js"></script><!-- /.control-sidebar -->
 
+<!--pagina Inicial Plugins-->
+<script src="site/plugins/jquery/jquery.min.js"></script>
+<script src="site/plugins/bootstrap-5.0.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="site/plugins/flickity/flickity.pkgd.min.js"></script>
+<script src="site/dist/js/adminlte.min.js"></script>
+<script src="site/dist/js/demo.js"></script>
+<script src="site/assets/js/slide.js"></script>
+
 </body>
 </html>
