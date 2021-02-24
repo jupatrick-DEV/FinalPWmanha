@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="site/plugins/blog-footer-template/dist/style.css">
         <!--fim p. footer-->    
         <!-- icomoon -->
-        <link rel="stylesheet" href="plugins/icomoon/icomoon.css" />    
+        <link rel="stylesheet" href="site/plugins/icomoon/icomoon.css" />    
     </head>
     <body>
 

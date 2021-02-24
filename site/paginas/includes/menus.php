@@ -1,5 +1,4 @@
 <!--header senac-->
-<header>
     <div class="row mt-4">
         <div class="col">
             <img class="img-fluid p-2 senacpe" src="site/assets/img/logoSenacPe.png" alt="" />
@@ -20,8 +19,7 @@
             </div>
         </div>
     </div>
-</header>
-<hr class="pt-0"/>
+<hr class="pt-0 mb-0"/>
 <!--fim do header senac-->
 <!--menu inicial-->
 <div class="row">
