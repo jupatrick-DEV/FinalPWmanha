@@ -67,7 +67,7 @@
                     <h5 class="card-title">Adicione um vÃ­deo</h5>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Link do vÃ­deo:</label>
-                        <br />
+                        <br /> 
                         <?php
                         foreach ($dados as $dado) {
                             echo $dado['linkVideo'] . '<br>';
