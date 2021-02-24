@@ -47,7 +47,7 @@
                     <a class="nav-link" href="http://www.pe.senac.br/cursos-2/">Próximas Turmas </a>
                 </li>
                 <div class="text-right">
-                    <a href="site/paginas/facavoce.php"><button class="btn btn-sm btn-outline-primary" type="button">Area Administrativa </button></a> 
+                    <a href="painel.php?pg=login"><button class="btn btn-sm btn-outline-primary" type="button">Area Administrativa </button></a> 
                 </div>
                 <div class="text-right">
                     <a href="painel/paginas/acesso/login.php"><button class="btn btn-sm btn-outline-secondary" type="button">Area Administrativa </button></a> 
