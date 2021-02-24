@@ -85,10 +85,12 @@ if ($pg) {
         
         
         case 'validar-artigo':
-            include_once 'painel/paginas/includes/header.php';
-            include_once 'painel/paginas/includes/menus.php';
+            $resultDados = new conexao ();
+            $dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
+            include_once 'site/paginas/includes/header.php';
+            
             include_once 'painel/paginas/pagina-validar-artigo.php';
-            include_once 'painel/paginas/includes/footer.php';
+            
 
             break;
         
