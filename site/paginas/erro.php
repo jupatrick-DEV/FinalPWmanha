@@ -20,7 +20,7 @@
 
                         <p>
                             Não conseguimos encontrar a página que você estava procurando. 
-                            Enquanto isso, você pode <a href="http://finalpwmanha.test/?pg=inicial">retornar a página inicial</a> 
+                            Enquanto isso, você pode <a href="?pg=inicial">retornar a página inicial</a> 
                     </div>
                     <!-- /.error-content -->
                 </div>
