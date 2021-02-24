@@ -12,7 +12,7 @@
                         </div>
                         <div class="-group">
                             <span class="vic-whatsapp"></span>  
-                            <label for="exampleFormControlInput1">Localidade</label>
+                            <label for="exampleFormControlInput1">Localidade </label>
 
                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
                         </div>
