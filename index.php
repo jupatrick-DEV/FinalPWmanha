@@ -112,7 +112,7 @@ if ($pg) {
 //não existe   
     include_once 'site/paginas/includes/header.php';
     include_once 'site/paginas/includes/menus.php'; 
-    include_once 'site/paginas/includes/erro.php'; 
+    include_once 'site/paginas/erro.php'; 
     include_once 'site/paginas/includes/footer.php';  
 
 

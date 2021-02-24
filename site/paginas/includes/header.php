@@ -30,6 +30,13 @@
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css'>      
         <link rel="stylesheet" href="site/plugins/blog-footer-template/dist/style.css">
         <!--fim p. footer-->    
+        <!-- icomoon -->
+        <link rel="stylesheet" href="site/plugins/icomoon/icomoon.css" />   
+        <!--Estilo Header contato Juliana-->
+        <!--Meu css-->
+        <link rel="stylesheet" href="site/assets/css/estilo-contato.css" />
+        <!--icomoon-->
+        <link rel="stylesheet" href="site/plugins/icomoon/style.css"/>
     </head>
     <body>
 
