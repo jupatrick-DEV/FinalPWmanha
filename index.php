@@ -53,7 +53,7 @@ if ($pg) {
             include_once 'site/paginas/includes/menus.php';
             if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 //                pegando variaveis via post
-                $nome = $_POST['nome'];
+                $nomecompleto = $_POST['nomecompleto'];
                 $email = $_POST['email'];
                 $curso = $_POST['curso'];
                 $mensagem = $_POST['mensagem'];
@@ -66,8 +66,8 @@ if ($pg) {
                 );
                 $resultDados = new conexao();
                 $resultDados->intervencaoNoBanco('INSERT INTO '
-                        . 'contato (nome, email, curso, mensagem) '
-                        . 'VALUES (:nome, :email, :curso, :mensagem)', $parametros);
+                        . 'contato (nomecompleto, email, curso, mensagem) '
+                        . 'VALUES (:nomecompleto, :email, :curso, :mensagem)', $parametros);
                 include_once 'painel/paginas/contato.php';
             } else {
                 include_once 'site/paginas/contato.php';

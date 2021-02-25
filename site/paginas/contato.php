@@ -43,11 +43,11 @@
                                     <form action="?pg=contato" method="POST">
                                         <div class="form-group">
                                             <label for="exampleFormControlInput1"><span class="badge badge-info">Nome Completo</span></label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                            <input type="text" name="nomecompleto" class="form-control" id="exampleFormControlInput1" placeholder="">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1"><span class="badge badge-info">Endereço de email</span></label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
                                             <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
                                         </div>
                                         <div class="form-group">
