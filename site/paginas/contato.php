@@ -40,7 +40,7 @@
                                 </div>
 
                                 <div class="col-8">
-                                    <form>
+                                    <form action="?pg=contato" method="POST">
                                         <div class="form-group">
                                             <label for="exampleFormControlInput1"><span class="badge badge-info">Nome Completo</span></label>
                                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
@@ -67,7 +67,7 @@
                                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                             <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
                                         </div>
-                                        <button type="button" class="btn btn-outline-primary btn-tool">Enviar</button>
+                                        <a href="?pg=painel-contato"> <button type="submit" class="btn btn-outline-primary btn-tool">Enviar</button> </a>
                                     </form>
                                 </div>
                             </div>
