@@ -4,16 +4,16 @@
     <ul class="navbar-nav">
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="?pg=inicio" class="nav-link">Inicio</a>
+            <a href="?pg=dashboard" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="?pg=contato" class="nav-link">Contato</a>
+            <a href="?pg=painel-contato" class="nav-link">Contato</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="?pg=validar-artigo " class="nav-link">Artigos</a>
+            <a href="?pg=tabela-artigo" class="nav-link">Solicitação dos Artigos</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="?pg=login" class="nav-link btn-danger text-left text-right">SAIR</a>
+            <a href="?pg=login" class="nav-link text-left text-right">Sair</a>
         </li>
 
     </ul>
