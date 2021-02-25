@@ -59,17 +59,49 @@ if ($pg) {
         case 'faca-voce-mesmo':
             include_once 'site/paginas/includes/header.php';
             include_once 'site/paginas/includes/menus.php';
-            include_once 'site/paginas/faca-voce-mesmo.php';
+
+            if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
+//                pegando variaveis via post
+                $titulo = $_POST['titulo'];
+                $sobrenome = $_POST['sobrenome'];
+                $nome = $_POST['nome'];
+                $email = $_POST['email'];
+                $curso = $_POST['curso'];
+                $instituicao = $_POST['instituicao'];
+                $video = $_POST['video'];
+                $imagem = $_POST['imagem'];
+                $artigo = $_POST['artigo'];
+
+//                tratar os dados enviados via post
+                $parametros = array(''
+                    . ':titulo' => $titulo,
+                    ':sobrenome' => $sobrenome,
+                    ':nome' => $nome,
+                    ':email' => $email,
+                    ':curso' => $curso,
+                    ':instituicao' => $instituicao,
+                    ':video' => $video,
+                    ':imagem' => $imagem,
+                    ':artigo' => $artigo,
+                );
+                $resultDados = new conexao();
+                $resultDados->intervencaoNoBanco('INSERT INTO '
+                        . 'tabela-artigo (titulo, sobrenome, nome, email, curso, instituicao, video, imagem, artigo) '
+                        . 'VALUES (:titulo, :sobrenome, :nome, :email, :curso, :instituicao, :video, :imagem, :artigo)', $parametros);
+                include_once 'site/paginas/pagina-cards.php';
+            } else {
+                include_once 'site/paginas/faca-voce-mesmo.php';
+            }
             include_once 'site/paginas/includes/footer.php';
 
             break;
 
-     case 'login':
+        case 'login':
             include_once 'site/paginas/includes/header.php';
             include_once 'site/paginas/includes/menus.php';
             include_once 'painel/paginas/acesso/login.php';
             include_once 'site/paginas/includes/footer.php';
-            break;        
+            break;
 
 //        Responsavel Hermes
         case 'pesquisar':
@@ -95,10 +127,10 @@ if ($pg) {
             include_once 'site/paginas/result-pesquisar.php';
             include_once 'site/paginas/includes/footer.php';
             break;
-        
-        
-        
-        
+
+
+
+
 // FIM PÁGINA INDEX DO SITE
         default:
 

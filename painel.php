@@ -39,10 +39,17 @@ if ($pg) {
             include_once 'painel/paginas/includes/footer.php';
             break;
         
-        case 'validar-artigo':
+        case 'tabela-artigo':
             include_once 'painel/paginas/includes/header.php';
             include_once 'painel/paginas/includes/menus.php';
             include_once 'painel/paginas/validar-artigo.php';
+            include_once 'painel/paginas/includes/footer.php';
+            break;
+        
+        case 'validar-artigo':
+            include_once 'painel/paginas/includes/header.php';
+            include_once 'painel/paginas/includes/menus.php';
+            include_once 'painel/paginas/pagina-validar-artigo.php';
             include_once 'painel/paginas/includes/footer.php';
             break;
        
