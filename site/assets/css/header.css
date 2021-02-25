@@ -4,16 +4,19 @@
 }
 
 .menuprincipal{
-    height: 100px;
-    padding-bottom: 0;
+    height: 60px;
     background-color: white;
     margin-left: 120px;
-    margin-right: 0;   
+    font-family: "Sanchez";
+
+}
+.menuprincipal i{
+    font-size: 20px;
+    margin: 0auto;
 }
 .senacpe{
     margin-left: 120px;
     width: 150px;
-    padding-bottom: 0;
 }
 
 .saladeestudos{
@@ -26,11 +29,13 @@
 body {
     background-color: white;
     font-family: "Sanchez";
+    
+
 }
 
-    .menuprincipal hr{
-        padding: 2px;
-        background-color: #ff6600;
-        margin-bottom: 0;
+.hrmenu{
+    border: 3px solid #ff6600;
+    background-color: #ff6600;
+    margin-bottom: 0;
 
-    }
+}
