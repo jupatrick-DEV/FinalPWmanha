@@ -1,8 +1,11 @@
-<?php
+<div class="container alert-warning">
+    Criar página de pesquisa.
+    <strong>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+        <?php
+        foreach ($dados as $dado) {
+            echo $dado['mensagem'];
+        }
+        ?>
+    </strong>
+</div>
