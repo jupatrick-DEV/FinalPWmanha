@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <p class="login-box-msg">Entre com seus dados de acesso</p>
 
-                    <form action="?pg=inicio-site" method="post">
+                    <form action="painel.php?pg=dashboard" method="post">
                         <div class="input-group mb-3">
                             <input name="usuario" type="text" class="form-control" placeholder="Usuário">
                             <div class="input-group-append">
@@ -27,7 +27,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <button type="submit"  class="btn btn-primary btn-block">Entrar</button>
+                                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
                             </div>                            
                         </div>
                     </form>
