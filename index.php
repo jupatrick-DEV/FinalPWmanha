@@ -11,7 +11,7 @@ $pg = isset($_GET['pg']);
 
 if ($pg) {
 
-//P√ÅGINA INDEX DO SITE
+//P√?GINA INDEX DO SITE
 
     switch ($_GET['pg']) {
 
@@ -61,7 +61,7 @@ if ($pg) {
                         . 'VALUES (:nome, :email, :curso, :mensagem)', $parametros);
                 include_once 'painel/paginas/contato.php';
             } else {
-            include_once 'site/paginas/contato.php';
+                include_once 'site/paginas/contato.php';
             }
             include_once 'site/paginas/includes/footer.php';
 
@@ -136,6 +136,17 @@ if ($pg) {
             include_once 'site/paginas/includes/footer.php';
             break;
 
+        case 'validar-artigo':
+            $resultDados = new conexao ();
+            $dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
+            include_once 'site/paginas/includes/header.php';
+
+            include_once 'painel/paginas/validar-artigo.php';
+
+
+            break;
+
+
 //        Responsavel Hermes
         case 'pesquisar':
 
@@ -164,7 +175,7 @@ if ($pg) {
 
 
 
-// FIM P√ÅGINA INDEX DO SITE
+// FIM P√?GINA INDEX DO SITE
         default:
 
             include_once 'site/paginas/includes/header.php';
