@@ -9,6 +9,7 @@ include_once 'painel/helper/funcoes.php';
 $pg = isset($_GET['pg']);
 
 
+
 if ($pg) {
 
 //P�?GINA INDEX DO SITE
@@ -24,7 +25,7 @@ if ($pg) {
             include_once 'site/paginas/includes/footer.php';
 
             break;
-        
+
         case 'artigos-menu':
 
             include_once 'site/paginas/includes/header.php';
@@ -127,8 +128,7 @@ if ($pg) {
                         . 'VALUES (:categoria, :usuario, :titulo, '
                         . ':sobrenome, :nome, :email, '
                         . ':curso, :instituicao, :linkVideo, '
-                        . ':linkImagem, :artigo)', 
-                        $parametros);
+                        . ':linkImagem, :artigo)', $parametros);
                 include_once 'site/paginas/pagina-cards.php';
             } else {
                 include_once 'site/paginas/faca-voce-mesmo.php';
