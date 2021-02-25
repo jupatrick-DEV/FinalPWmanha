@@ -26,6 +26,10 @@ if ($pg) {
             break;
 
         case 'pagina-artigos':
+            $id = $_GET ['id'];
+
+            $resultDados = new conexao();
+            $dados = $resultDados->selecionaDados('SELECT *  FROM artigos WHERE id = ' . $id);
             include_once 'site/paginas/includes/header.php';
             include_once 'site/paginas/includes/menus.php';
             include_once 'site/paginas/pagina-artigos.php';
