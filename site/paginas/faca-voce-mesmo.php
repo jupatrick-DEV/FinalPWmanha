@@ -5,7 +5,7 @@
 
             <div class="row">
                 <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="exampleFormControlSelect1" name="categoria">
                         <option>Categoria</option>
                         <option>Artes</option>
                         <option>Beleza</option>
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="form-group">
                     <span class="reg-user"></span>                                        
-                    <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Título">
+                    <input type="text" name="titulo" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Título">
                 </div>
             </div>
 
@@ -40,19 +40,19 @@
                 <div class="col">
                     <div class="form-group">
                         <span class="reg-user"></span>  
-                        <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Sobrenome">
+                        <input type="text" name="sobrenome" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Sobrenome">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <span class="reg-user"></span>  
-                        <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Nome">
+                        <input type="text" name="nome" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Nome">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <span class="reg-user"></span>  
-                        <input type="email" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="usuario@email.com">
+                        <input type="email" name="email" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="usuario@email.com">
                     </div>
                 </div>
             </div>
@@ -61,18 +61,19 @@
                 <div class="col">
                     <div class="form-group">
                         <span class="reg-user"></span>  
-                        <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Curso">
+                        <input type="text" name="curso" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Curso">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <span class="reg-user"></span>  
-                        <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Instituição">
+                        <input type="text" name="instituicao" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Instituição">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select name="usuario" class="form-control" id="exampleFormControlSelect1">
+                            <option>Selecione</option>
                             <option>Aluno</option>
                             <option>Ex-Aluno</option>
                             <option>Professor/Instrutor</option>
@@ -83,20 +84,20 @@
 
             <div class="form-group">
                 <span class="reg-user"></span>                                        
-                <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Link Video">
+                <input type="text" name="linkVideo" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Link Video">
             </div>
 
             <div class="form-group  ">
                 <span class="reg-user"></span>                                        
-                <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Arquivo Imagem">
+                <input type="text" name="linkImagem" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Arquivo Imagem">
             </div>
 
             <div class="form-group">
                 <span class="reg-user"></span>                                          
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" placeholder="Artigo (máximo 15.000 caracteres)"></textarea>
+                <textarea class="form-control" name="artigo" id="exampleFormControlTextarea1" rows="20" placeholder="Artigo (máximo 15.000 caracteres)"></textarea>
             </div>
 
-            <a href="?pg=tabela-artigo"><button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus" ></i> Criar</button></a>
+            <a href="painel.php?pg=tabela-artigo"><button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus" ></i> Criar</button></a>
 
         </div>
     </form>

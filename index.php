@@ -29,7 +29,7 @@ if ($pg) {
             $id = $_GET ['id'];
 
             $resultDados = new conexao();
-            $dados = $resultDados->selecionaDados('SELECT *  FROM artigos WHERE id = ' . $id);
+            $dados = $resultDados->selecionaDados('SELECT *  FROM facavocemesmo WHERE id = ' . $id);
             include_once 'site/paginas/includes/header.php';
             include_once 'site/paginas/includes/menus.php';
             include_once 'site/paginas/pagina-artigos.php';
@@ -82,33 +82,37 @@ if ($pg) {
 
             if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 //                pegando variaveis via post
-                $titulo = $_POST['titulo'];
-                $sobrenome = $_POST['sobrenome'];
-                $nome = $_POST['nome'];
-                $email = $_POST['email'];
-                $curso = $_POST['curso'];
-                $instituicao = $_POST['instituicao'];
-                $video = $_POST['video'];
-                $imagem = $_POST['imagem'];
-                $artigo = $_POST['artigo'];
+//                $localidade = $_POST['localidade']; ????? NÃO ENTENDI
+                $categoria = $_POST ['categoria'];
+                $usuario = $_POST ['usuario'];
+                $titulo = $_POST ['titulo'];
+                $sobrenome = $_POST ['sobrenome'];
+                $nome = $_POST ['nome'];
+                $email = $_POST ['email'];
+                $curso = $_POST ['curso'];
+                $instituicao = $_POST ['instituicao'];
+                $linkVideo = $_POST ['linkVideo'];
+                $linkImagem = $_POST ['linkImagem'];
+                $artigo = $_POST ['artigo'];
 
 //                tratar os dados enviados via post
                 $parametros = array(''
                     . ':categoria' => $categoria,
+                    'usuario' => $usuario,
                     'titulo' => $titulo,
                     ':sobrenome' => $sobrenome,
                     ':nome' => $nome,
                     ':email' => $email,
                     ':curso' => $curso,
                     ':instituicao' => $instituicao,
-                    ':video' => $video,
-                    ':imagem' => $imagem,
+                    ':linkVideo' => $linkVideo,
+                    ':LinkImagem' => $linkImagem,
                     ':artigo' => $artigo,
                 );
                 $resultDados = new conexao();
                 $resultDados->intervencaoNoBanco('INSERT INTO '
-                        . 'tabela-artigo (categoria, titulo, sobrenome, nome, email, curso, instituicao, video, imagem, artigo) '
-                        . 'VALUES (:categoria, :titulo, :sobrenome, :nome, :email, :curso, :instituicao, :video, :imagem, :artigo)', $parametros);
+                        . 'facavocemesmo (categoria, titulo, usuario, sobrenome, nome, email, curso, instituicao, linkVideo, linkImagem, artigo) '
+                        . 'VALUES (:categoria, :titulo, :usuario, :sobrenome, :nome, :email, :curso, :instituicao, :linkVideo, :linkImagem, :artigo)', $parametros);
                 include_once 'site/paginas/pagina-cards.php';
             } else {
                 include_once 'site/paginas/faca-voce-mesmo.php';

@@ -1,6 +1,6 @@
 <?php
 $resultDados = new Conexao();
-$dados = $resultDados->selecionaDados('SELECT * FROM artigo');
+$dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
