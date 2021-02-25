@@ -9,6 +9,7 @@ include_once 'painel/helper/funcoes.php';
 $pg = isset($_GET['pg']);
 
 
+
 if ($pg) {
 
 //P�?GINA INDEX DO SITE
@@ -24,7 +25,7 @@ if ($pg) {
             include_once 'site/paginas/includes/footer.php';
 
             break;
-        
+
         case 'artigos-menu':
 
             include_once 'site/paginas/includes/header.php';
@@ -35,10 +36,9 @@ if ($pg) {
             break;
 
         case 'pagina-artigos':
-            $id = $_GET ['id'];
 
             $resultDados = new conexao();
-            $dados = $resultDados->selecionaDados('SELECT *  FROM facavocemesmo WHERE id = ' . $id);
+            $dados = $resultDados->selecionaDados('SELECT *  FROM facavocemesmo');
             include_once 'site/paginas/includes/header.php';
             include_once 'site/paginas/includes/menus.php';
             include_once 'site/paginas/pagina-artigos.php';
@@ -128,8 +128,7 @@ if ($pg) {
                         . 'VALUES (:categoria, :usuario, :titulo, '
                         . ':sobrenome, :nome, :email, '
                         . ':curso, :instituicao, :linkVideo, '
-                        . ':linkImagem, :artigo)', 
-                        $parametros);
+                        . ':linkImagem, :artigo)', $parametros);
                 include_once 'site/paginas/pagina-cards.php';
             } else {
                 include_once 'site/paginas/faca-voce-mesmo.php';
