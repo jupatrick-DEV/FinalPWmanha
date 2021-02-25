@@ -1,53 +1,104 @@
-<div class="container mt-5">
-    <h1 class="text-center pb-2">Faça você mesmo</h1>
+<div class="container mt-2">
+    <h1 class="text-center">Faça você mesmo</h1>
     <div class="form w-75 h-50 mx-auto ">
-        <div class="row justify-content-center">
-            <div class="col-5">
 
+        <div class="row">
+            <div class="form-group">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Categoria</option>
+                    <option>Artes</option>
+                    <option>Beleza</option>
+                    <option>Comércio</option>
+                    <option>Comunicação</option>
+                    <option>Conservaçao e Zeladoria</option>
+                    <option>Design</option>
+                    <option>Educacional</option>
+                    <option>Gastronomia</option>
+                    <option>Gestao</option>
+                    <option>Hospedagem</option>
+                    <option>Idiomas</option>
+                    <option>Iformática</option>
+                    <option>Lazer</option>
+                    <option>Meio ambiente</option>
+                    <option>Moda</option>
+                    <option>Saúde</option>
+                    <option>Segurança</option>
+                    <option>Turismo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <span class="reg-user"></span>                                        
+                <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Título">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
                 <div class="form-group">
                     <span class="reg-user"></span>  
-                    <label for="exampleFormControlInput1">Nome e Sobrenome</label>                           
-                    <input type="email" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="">
-                </div>
-                <div class="-group">
-                    <span class="vic-whatsapp"></span>  
-                    <label for="exampleFormControlInput1">Localidade </label>
-
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Sobrenome">
                 </div>
             </div>
-            <div class="col-5">
-
+            <div class="col">
                 <div class="form-group">
-                    <span class="vic-cake"></span>
-                    <label for="exampleFormControlSelect1">Usuário</label>
+                    <span class="reg-user"></span>  
+                    <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Nome">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <span class="reg-user"></span>  
+                    <input type="email" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="usuario@email.com">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <span class="reg-user"></span>  
+                    <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Curso">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <span class="reg-user"></span>  
+                    <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Instituição">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option>Aluno</option>
-                        <option>Ex-aluno</option>
+                        <option>Ex-Aluno</option>
+                        <option>Professor/Instrutor</option>
                     </select>
                 </div>
-                <div class="form-group ">
-                    <span class="vic-news-paper"></span>
-                    <label for="exampleFormControlInput1">Curso/instituição</label>
-                    <span class="manu-document"></span>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div> 
+            </div>
+        </div>
 
-            </div>
+        <div class="form-group">
+            <span class="reg-user"></span>                                        
+            <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Link Video">
         </div>
-        <div class="row">
-            <div class="col-6 ml-5">
-                <div class="form-group text">
-                    <label for="exampleFormControlTextarea1">Exemplo de textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
-                </div>
-            </div>
-            <div class="col mt-4">
-                <img class="img-fluid"src="https://placehold.it/x500" alt=""/>
-            </div>
+
+        <div class="form-group  ">
+            <span class="reg-user"></span>                                        
+            <input type="text" class="form-control" autofocus="" id="exampleFormControlInput1" placeholder="Arquivo Imagem">
         </div>
+
+        <div class="form-group">
+            <span class="reg-user"></span>                                          
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" placeholder="Artigo (máximo 15.000 caracteres)"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
     </div>
+        <br />
+   
 
 
-</div>
 
