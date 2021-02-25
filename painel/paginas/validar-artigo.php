@@ -27,11 +27,11 @@ $dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
                         <table id="tabela-produtos" class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Cod</th>
-                                    <th>Titulo</th>
-                                    <th>Categoria</th>
-                                    <th>Nome do Usuário</th>
-
+                                    <th class="text-center">Cod</th>
+                                    <th class="text-center">Titulo</th>
+                                    <th class="text-center">Categoria</th>
+                                    <th class="text-center">Nome do Usuário</th>
+                                    <th class="text-center">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,15 +40,15 @@ $dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
                                 foreach ($dados as $dado) {
                                     ?>
                                     <tr>
-                                        <td><?php echo $dado ['id']; ?></td>
-                                        <td><?php echo $dado ['titulo']; ?></td>
-                                        <td><?php echo $dado ['categoria']; ?></td>
-                                        <td><?php echo $dado ['nome']; ?></td>
-                                        <td>
+                                        <td class="text-center"><?php echo $dado ['id']; ?></td>
+                                        <td class="text-center"><?php echo $dado ['titulo']; ?></td>
+                                        <td class="text-center"><?php echo $dado ['categoria']; ?></td>
+                                        <td class="text-center"><?php echo $dado ['nome']; ?></td>
+                                        <td class="text-center">
                                             <!--vizualiza-->
-                                            <a href="?pg=validar-artigo&id=<?php echo $dado['id']; ?>" class="btn btn-success">
-                                                <span class="fa fa-eye"></span>
-                                            </a>
+                                            <a href="?pg=validar-artigo&id=<?php echo $dado['id']; ?>" class="btn btn-success"><span class="fa fa-eye"></span></a>
+                                            |
+                                            <a href="?pg=validar-artigo&id=<?php echo $dado['id']; ?>" class="btn btn-success"><span class="fas fa-android"></span>ok</a>
                                         </td>
                                     </tr>
                                     <?php
@@ -57,15 +57,14 @@ $dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
 
 
 
-
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Cod</th>
-                                    <th>Titulo</th>
-                                    <th>Categoria</th>
-                                    <th>Nome do Usuário</th>
-                                    <th></th>
+                                    <th class="text-center">Cod</th>
+                                    <th class="text-center">Titulo</th>
+                                    <th class="text-center">Categoria</th>
+                                    <th class="text-center">Nome do Usuário</th>
+                                    <th class="text-center">Ações</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -77,10 +76,8 @@ $dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
 
         </div>
         <!-- /.col -->
-</div>
-<!-- /.row -->
-</div>
-<!-- /.container-fluid -->
-</section>
-<!-- /.content -->
+
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
