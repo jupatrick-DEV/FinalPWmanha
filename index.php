@@ -94,7 +94,8 @@ if ($pg) {
 
 //                tratar os dados enviados via post
                 $parametros = array(''
-                    . ':titulo' => $titulo,
+                    . ':categoria' => $categoria,
+                    'titulo' => $titulo,
                     ':sobrenome' => $sobrenome,
                     ':nome' => $nome,
                     ':email' => $email,
@@ -106,8 +107,8 @@ if ($pg) {
                 );
                 $resultDados = new conexao();
                 $resultDados->intervencaoNoBanco('INSERT INTO '
-                        . 'tabela-artigo (titulo, sobrenome, nome, email, curso, instituicao, video, imagem, artigo) '
-                        . 'VALUES (:titulo, :sobrenome, :nome, :email, :curso, :instituicao, :video, :imagem, :artigo)', $parametros);
+                        . 'tabela-artigo (categoria, titulo, sobrenome, nome, email, curso, instituicao, video, imagem, artigo) '
+                        . 'VALUES (:categoria, :titulo, :sobrenome, :nome, :email, :curso, :instituicao, :video, :imagem, :artigo)', $parametros);
                 include_once 'site/paginas/pagina-cards.php';
             } else {
                 include_once 'site/paginas/faca-voce-mesmo.php';
