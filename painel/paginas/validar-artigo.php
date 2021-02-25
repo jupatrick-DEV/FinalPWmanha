@@ -57,7 +57,6 @@ $dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
 
 
 
-
                             </tbody>
                             <tfoot>
                                 <tr>

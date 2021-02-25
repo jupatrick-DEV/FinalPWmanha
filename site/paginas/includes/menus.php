@@ -71,6 +71,9 @@
                         <a class="nav-link" href="?pg=inicial">Home</a>
                     </li>
                     <li class="nav-item active mr-3">
+                        <a class="nav-link" href="?pg=artigos-menu">Artigos</a>
+                    </li>
+                    <li class="nav-item active mr-3">
                         <a class="nav-link" href="?pg=sobre">Sobre </a>
                     </li>
                     <li class="nav-item active mr-3">
