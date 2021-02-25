@@ -1,6 +1,4 @@
-
 <div class="paginaartigo">
-
     <div class="container w-auto" style="background-color: white">
         <div class="row">
             <img src="../../painel/assets/img/logosenac" class="img-fluid m-auto w-25" alt="Imagem responsiva" >        
@@ -8,7 +6,6 @@
         <div class="row m-auto text-center w-25">
             <small class="text-justify"></small>
         </div>
-
         <div class="row">
             <div class="col mb-3 mt-3">
                 <h1 class="mb-0">Título do artigo</h1> 
@@ -59,17 +56,11 @@
                         Um dos primeiros programadores que se tem notícia de ter completado todos os passos para a computação sem auxílio, incluindo a compilação e o teste, é Wallace J. Eckert. O trabalho deste homem antecede a ascensão das linguagens de computador, porque ele usou a linguagem da matemática para solucionar problemas astronômicos. No entanto, todos os ingredientes estavam lá: ele trabalhou um laboratório de computação para a Universidade de Colúmbia com equipamentos fornecidos pela IBM, completos com uma divisão de serviço de atendimento ao cliente, e consultores de engenharia para propósitos especiais, na cidade de Nova York, na década de 1930, usando cartões perfurados para armazenar os resultados intermediários de seus cálculos, e então formatando os cartões perfurados para controlar a impressão das respostas, igual ao trabalho para os censos décadas antes. Tinha técnicas de debug tais como códigos de cores, bases cruzadas, verificação e duplicação. Uma diferença entre Eckert e os programadores dos dias de hoje é que o exemplo do seu trabalho influenciou o projeto Manhattan. Seu trabalho foi reconhecido por astrônomos do Observatório da Universidade de Yale, Observatório da Universidade de Princeton, Observatório da Marinha dos EUA, Observatório da Faculdade Harvard, Observatório dos estudantes da Universidade da Califórnia, Observatório Ladd da Universidade de Brown e Observatório Sproul da Faculdade de Swarthmore.
 
                         Alan Turing é frequentemente encarado como o pai da ciência de computadores e, por afinidade, da programação. Ele foi responsável por ajudar na elaboração e programação de um computador destinado a quebrar o código alemão ENIGMA durante a Segunda Guerra Mundial — ver Máquina Enigma
-                </div> 
                 </p>
-
+                </div> 
             </div> 
-
-
         </div>
-
     </div>
-
 </div>
-
 
 

@@ -14,7 +14,10 @@ if ($pg) {
 
 
         case 'login':
+            include_once 'site/paginas/includes/header.php';
+            include_once 'site/paginas/includes/menus.php';
             include_once 'painel/paginas/acesso/login.php';
+            include_once 'site/paginas/includes/footer.php';
             break;
 
         case 'dashboard':

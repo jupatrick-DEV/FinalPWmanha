@@ -1,5 +1,5 @@
 <!--header senac-->
-    <div class="row mt-4">
+    <div class="row mt-4 menuprincipal">
         <div class="col">
             <img class="img-fluid p-2 senacpe" src="site/assets/img/logoSenacPe.png" alt="" />
         </div>
@@ -33,10 +33,10 @@
                     <a class="nav-link" href="?pg=pagina-artigos">Artigos </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="site/paginas/sobre.php">Sobre </a>
+                    <a class="nav-link" href="?pg=sobre">Sobre </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="site/paginas/contato.php">Contato </a>
+                    <a class="nav-link" href="?pg=contato">Contato </a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="http://www.pe.senac.br/">SenacPE </a>
@@ -45,10 +45,10 @@
                     <a class="nav-link" href="http://www.pe.senac.br/cursos-2/">Próximas Turmas </a>
                 </li>
                 <div class="text-right">
-                    <a href="painel.php?pg=login"><button class="btn btn-sm btn-outline-primary" type="button">Area Administrativa </button></a> 
+                    <a href="?pg=faca-voce-mesmo"><button class="btn btn-sm btn-outline-primary" type="button">Faça Você Mesmo </button></a> 
                 </div>
                 <div class="text-right">
-                    <a href="painel/paginas/acesso/login.php"><button class="btn btn-sm btn-outline-secondary" type="button">Area Administrativa </button></a> 
+                    <a href="painel.php?pg=login"><button class="btn btn-sm btn-outline-secondary" type="button">Area Administrativa </button></a> 
                 </div>
             </ul>
         </div>

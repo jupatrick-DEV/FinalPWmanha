@@ -37,6 +37,8 @@
         <link rel="stylesheet" href="site/assets/css/estilo-contato.css" />
         <!--icomoon-->
         <link rel="stylesheet" href="site/plugins/icomoon/style.css"/>
+          <!-- icheck bootstrap -->
+        <link rel="stylesheet" href="painel/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     </head>
     <body>
 
