@@ -11,7 +11,7 @@ $pg = isset($_GET['pg']);
 
 if ($pg) {
 
-//PÃ?GINA INDEX DO SITE
+//Pï¿½?GINA INDEX DO SITE
 
     switch ($_GET['pg']) {
 
@@ -21,6 +21,15 @@ if ($pg) {
             include_once 'site/paginas/includes/header.php';
             include_once 'site/paginas/includes/menus.php';
             include_once 'site/paginas/pagina-cards.php';
+            include_once 'site/paginas/includes/footer.php';
+
+            break;
+        
+        case 'artigos-menu':
+
+            include_once 'site/paginas/includes/header.php';
+            include_once 'site/paginas/includes/menus.php';
+            include_once 'site/paginas/artigomenu.php';
             include_once 'site/paginas/includes/footer.php';
 
             break;
@@ -81,7 +90,6 @@ if ($pg) {
 
             if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 //                pegando variaveis via post
-//                $localidade = $_POST['localidade']; ????? NÃƒO ENTENDI
                 $categoria = $_POST ['categoria'];
                 $usuario = $_POST ['usuario'];
                 $titulo = $_POST ['titulo'];
@@ -97,21 +105,30 @@ if ($pg) {
 //                tratar os dados enviados via post
                 $parametros = array(''
                     . ':categoria' => $categoria,
-                    'usuario' => $usuario,
-                    'titulo' => $titulo,
+                    ':usuario' => $usuario,
+                    ':titulo' => $titulo,
                     ':sobrenome' => $sobrenome,
                     ':nome' => $nome,
                     ':email' => $email,
                     ':curso' => $curso,
                     ':instituicao' => $instituicao,
                     ':linkVideo' => $linkVideo,
-                    ':LinkImagem' => $linkImagem,
+                    ':linkImagem' => $linkImagem,
                     ':artigo' => $artigo,
                 );
                 $resultDados = new conexao();
                 $resultDados->intervencaoNoBanco('INSERT INTO '
-                        . 'facavocemesmo (categoria, titulo, usuario, sobrenome, nome, email, curso, instituicao, linkVideo, linkImagem, artigo) '
-                        . 'VALUES (:categoria, :titulo, :usuario, :sobrenome, :nome, :email, :curso, :instituicao, :linkVideo, :linkImagem, :artigo)', $parametros);
+                        . 'facavocemesmo ('
+                        . 'categoria, usuario, titulo, '
+                        . 'sobrenome, nome, email, '
+                        . 'curso, instituicao, linkVideo, '
+                        . 'linkImagem, artigo)'
+                        . ' '
+                        . 'VALUES (:categoria, :usuario, :titulo, '
+                        . ':sobrenome, :nome, :email, '
+                        . ':curso, :instituicao, :linkVideo, '
+                        . ':linkImagem, :artigo)', 
+                        $parametros);
                 include_once 'site/paginas/pagina-cards.php';
             } else {
                 include_once 'site/paginas/faca-voce-mesmo.php';
@@ -166,7 +183,7 @@ if ($pg) {
 
 
 
-// FIM PÃ?GINA INDEX DO SITE
+// FIM Pï¿½?GINA INDEX DO SITE
         default:
 
             include_once 'site/paginas/includes/header.php';
