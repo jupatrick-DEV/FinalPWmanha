@@ -43,7 +43,7 @@ if ($pg) {
        
         case 'validar-artigo':
             $resultDados = new conexao ();
-            $dados = $resultDados->selecionaDados('SELECT * FROM facavoce mesmo');
+            $dados = $resultDados->selecionaDados('SELECT * FROM facavocemesmo');
             include_once 'site/paginas/includes/header.php';
 
             include_once 'painel/paginas/pagina-validar-artigo.php';
